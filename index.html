@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pisang Ijo</title>
+    <style>
+        @font-face {
+            font-family: 'ZodiacFont';
+            src: url('zodiac_font.ttf') format('truetype'); /* Replace with correct font path */
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+        body {
+            background-image: url('catur.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        a, button {
+            font-family: 'ZodiacFont', 'Roboto', Arial, sans-serif;
+            font-weight: 900;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.19);
+            background-color: #5E9185; 
+            border: 1px solid #d1b4a3; 
+            color: #f5e2d8; 
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 32px; 
+            letter-spacing: 1px;
+            margin: 4px 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+        }
+
+        button {
+            background-color: red;
+        }
+
+        a:hover, button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        img {
+            margin-bottom: 20px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.19);
+        }
+
+        .popover {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .popover img {
+            width: 150px;
+            height: auto;
+            border-radius: 0;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .menu-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.jpg" alt="logo" width="200">
+    <a id="popover-button">Open Menu</a>
+    <div class="overlay" id="overlay"></div>
+    <div class="popover" id="image-popover">
+        <h1>Menu</h1>
+        <div class="menu-container">
+            <img src="menu.jpg" alt="Menu Image">
+        </div>
+        <br>
+        <button id="close-popover">Close</button>
+        
+    </div>
+    <a href="https://api.whatsapp.com/send/?phone=62882002222787&text&type=phone_number&app_absent=0">WhatsApp</a>
+    <a href="https://www.tiktok.com/@desvapeso?_t=ZS-8vpKK4A2icJ&_r=1">Tiktok</a>
+    <a href="https://shopee.co.id/universal-link/now-food/shop/22095918?deep_and_deferred=1&shareChannel=whatsapp">Shopeefood</a>
+    <a href="https://maps.app.goo.gl/ubCs8mB9D7F3iRmV8">Lokasi</a>
+
+    <script>
+        const button = document.getElementById('popover-button');
+        const popover = document.getElementById('image-popover');
+        const overlay = document.getElementById('overlay');
+        const closeButton = document.getElementById('close-popover');
+
+        button.addEventListener('click', () => {
+            popover.classList.add('show');
+            overlay.classList.add('show');
+        });
+
+        closeButton.addEventListener('click', () => {
+            popover.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        overlay.addEventListener('click', () => {
+            popover.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
